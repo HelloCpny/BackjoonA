@@ -1,28 +1,22 @@
+//1110 더하기 사이클
 #include <iostream>
 using namespace std;
 int main() {
-	int a, b, c,d;
+	int n;
+	int a, b;
+	int next=100;
+	int start;
 	int count = 0;
-	cin >> c;
-	a = c / 10;
-	b = c % 10;
-	d = a + b;
-
-	while (a + b == c) {
-		
+	cin >> n;
+	start = n;
+	while (start != next) {
+		a = n / 10;
+		b = n % 10;
+		next = b *10 + ((a + b)%10);
+		n = next;
 		count++;
+		
 	}
-	
+	cout << count;
 	return 0;
 }
-/*#include <iostream>
-using namespace std;
-int main() {
-	int a, b;
-	while (!cin.eof()) {
-		cin >> a >> b;
-		cout << a + b << "\n";
-
-	}
-	return 0;
-}*/
